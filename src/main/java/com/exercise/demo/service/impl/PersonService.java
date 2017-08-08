@@ -1,9 +1,10 @@
-package com.exercise.demo.service;
+package com.exercise.demo.service.impl;
 
 import com.exercise.demo.entity.Person;
 import com.exercise.demo.entity.Store;
 import com.exercise.demo.repo.PersonRepository;
 import com.exercise.demo.repo.StoreRepository;
+import com.exercise.demo.service.IPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,15 +14,12 @@ import java.util.Date;
  * Created by Fathoni on 8/4/2017.
  */
 @Service
-public class PersonService {
+public class PersonService implements IPersonService{
+    @Autowired
     private PersonRepository personRepository;
-    private StoreRepository storeRepository;
 
     @Autowired
-    public PersonService(PersonRepository personRepository, StoreRepository storeRepository){
-        this.personRepository = personRepository;
-        this.storeRepository = storeRepository;
-    }
+    private StoreRepository storeRepository;
 
     public Person createPerson(Integer id, String name, Date joinDate, String type, Integer storeId){
         Store store = storeRepository.findOne(storeId);

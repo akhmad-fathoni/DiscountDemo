@@ -1,9 +1,11 @@
-package com.exercise.demo.service;
+package com.exercise.demo.service.impl;
 
 import com.exercise.demo.entity.Person;
 import com.exercise.demo.entity.Store;
 import com.exercise.demo.repo.PersonRepository;
 import com.exercise.demo.repo.StoreRepository;
+import com.exercise.demo.service.IDiscountService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -12,17 +14,15 @@ import java.util.Date;
  * Created by Fathoni on 8/4/2017.
  */
 @Service
-public class DiscountService {
+public class DiscountService implements IDiscountService{
+    @Autowired
     private PersonRepository personRepository;
+
+    @Autowired
     private StoreRepository storeRepository;
 
     private static final Double discMargin = 100.0;
     private static final Double constNonPercentageDisc = 5.0;
-
-    public DiscountService(PersonRepository personRepository, StoreRepository storeRepository) {
-        this.personRepository = personRepository;
-        this.storeRepository = storeRepository;
-    }
 
     public Double getNetPayable(Integer storeId, Integer buyerId, Double totalBill){
         Store store = storeRepository.findOne(storeId);

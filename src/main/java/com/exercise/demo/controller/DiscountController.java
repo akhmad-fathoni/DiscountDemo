@@ -2,7 +2,7 @@ package com.exercise.demo.controller;
 
 import com.exercise.demo.entity.Store;
 import com.exercise.demo.repo.StoreRepository;
-import com.exercise.demo.service.DiscountService;
+import com.exercise.demo.service.impl.DiscountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

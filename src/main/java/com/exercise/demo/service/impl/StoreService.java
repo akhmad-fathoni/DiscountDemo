@@ -1,7 +1,8 @@
-package com.exercise.demo.service;
+package com.exercise.demo.service.impl;
 
 import com.exercise.demo.entity.Store;
 import com.exercise.demo.repo.StoreRepository;
+import com.exercise.demo.service.IStoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,13 +11,9 @@ import org.springframework.stereotype.Service;
  * Created by Fathoni on 8/4/2017.
  */
 @Service
-public class StoreService {
-    private StoreRepository storeRepository;
-
+public class StoreService implements IStoreService {
     @Autowired
-    public StoreService(StoreRepository storeRepository){
-        this.storeRepository = storeRepository;
-    }
+    private StoreRepository storeRepository;
 
     public Store createStore(Integer id, String name, String type){
         return storeRepository.save(new Store(id, name, type));

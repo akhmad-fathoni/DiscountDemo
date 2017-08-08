@@ -2,8 +2,8 @@ package com.exercise.demo;
 
 import com.exercise.demo.entity.Person;
 import com.exercise.demo.entity.Store;
-import com.exercise.demo.service.PersonService;
-import com.exercise.demo.service.StoreService;
+import com.exercise.demo.service.impl.PersonService;
+import com.exercise.demo.service.impl.StoreService;
 import com.exercise.demo.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

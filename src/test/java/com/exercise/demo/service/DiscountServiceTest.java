@@ -4,6 +4,7 @@ import com.exercise.demo.entity.Person;
 import com.exercise.demo.entity.Store;
 import com.exercise.demo.repo.PersonRepository;
 import com.exercise.demo.repo.StoreRepository;
+import com.exercise.demo.service.impl.DiscountService;
 import com.exercise.demo.utils.Utils;
 import org.junit.Assert;
 import org.junit.Before;
