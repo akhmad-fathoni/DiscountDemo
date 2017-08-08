@@ -2,8 +2,8 @@ package com.exercise.demo;
 
 import com.exercise.demo.entity.Person;
 import com.exercise.demo.entity.Store;
-import com.exercise.demo.service.impl.PersonService;
-import com.exercise.demo.service.impl.StoreService;
+import com.exercise.demo.service.IPersonService;
+import com.exercise.demo.service.IStoreService;
 import com.exercise.demo.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -13,10 +13,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DemoApplication implements CommandLineRunner {
 	@Autowired
-	private StoreService storeService;
+	private IStoreService storeService;
 
 	@Autowired
-	private PersonService personService;
+	private IPersonService personService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);

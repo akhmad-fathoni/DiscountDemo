@@ -26,6 +26,11 @@ public class DiscountService implements IDiscountService{
 
     public Double getNetPayable(Integer storeId, Integer buyerId, Double totalBill){
         Store store = storeRepository.findOne(storeId);
+
+        if (store == null){
+            return 0.0;
+        }
+
         Double afterDisc = totalBill.doubleValue();
 
         int discMultiply = (int) (totalBill/discMargin);
@@ -47,6 +52,10 @@ public class DiscountService implements IDiscountService{
          */
 
         Person person = personRepository.findOne(buyerId);
+
+        if (person==null){
+            return 0.0;
+        }
 
         if (person.getType() == Person.EMP){
             return afterDisc - (totalBill * 20/100);
